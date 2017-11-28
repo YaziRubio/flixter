@@ -11,13 +11,18 @@
   <body>
     <div id="flex-content-container">
       <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <a class="navbar-brand" href="#">Flixter</a>
+        <%= link_to 'Flixter', root_url, class: 'navbar-brand' %>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item">
+              <%= link_to 'See All Courses', courses_path %>
+            </li>
+          </ul>
+          <ul class="narbar-nav">
             <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
